@@ -1,0 +1,60 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Special+Elite&display=swap');
+
+ body{
+  font-family: 'Poppins', sans-serif;
+font-family: 'Special Elite', cursive;
+ }
+
+/* Navbar Styling */
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem; /* Reduce top and bottom padding */
+  height: 17vh; /* Set the Navbar height to 17vh */
+}
+
+/* Logo Styling */
+.logo {
+  font-family: Impact, sans-serif;
+  font-size: 69px;
+  color: rgb(0, 0, 0); /* Set the default color to black */
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.red {
+  color: red;
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem; /* Add some gap between the links */
+  height: 100%; /* Fill the entire Navbar height */
+  align-items: center; /* Vertically center the links within the Navbar */
+}
+
+.nav-links li {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #B3B3B3; /* Light grey on hover */
+}

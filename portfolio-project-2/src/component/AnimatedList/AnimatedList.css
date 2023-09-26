@@ -1,0 +1,16 @@
+.animated-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .list-item {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .list-item.active {
+    opacity: 1;
+  }
+  
