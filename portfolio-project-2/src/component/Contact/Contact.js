@@ -3,12 +3,12 @@ import './Contact.css';
 function Contact() {
   return (
     <section id="contact">
-      <p className="section__text__p1">Get in Touch</p>
+      <p className="section__text__p1"><h1>Meet The Team</h1>Meet The Team</p>
       <h1 className="title">Contact Me</h1>
       <div className="contact-info-upper-container">
         <div className="contact-info-container">
           <img
-            src=""
+            src='./Assets/email.png'
             alt="Email icon"
             className="icon contact-icon email-icon"
           />

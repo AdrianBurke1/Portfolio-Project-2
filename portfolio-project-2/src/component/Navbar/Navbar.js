@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.css'; // Import your CSS file
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 function Navbar() {
+  const [isActive, setIsActive] = useState(false);
+
+  const toggleMenu = () => {
+    setIsActive(!isActive);
+  };
+
   return (
     <nav className="navbar">
       <div className="logo">
@@ -17,18 +23,25 @@ function Navbar() {
           </a>
         </Link>
       </div>
-      <ul className="nav-links">
+
+      {/* Add the hamburger button */}
+      <button className="hamburger" onClick={toggleMenu}>
+        &#9776;
+      </button>
+
+      {/* Create the navigation links */}
+      <ul className={`nav-links ${isActive ? 'active' : ''}`}>
         <li>
-          <Link to="/newgames">New Games</Link>
+          <Link to="/newgames" onClick={toggleMenu}>New Games</Link>
         </li>
         <li>
-          <Link to="/addgames">Add Games</Link>
+          <Link to="/addgames" onClick={toggleMenu}>Add Games</Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/about" onClick={toggleMenu}>About</Link>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact" onClick={toggleMenu}>Contact</Link>
         </li>
       </ul>
     </nav>

@@ -58,3 +58,61 @@ font-family: 'Special Elite', cursive;
 .nav-links a:hover {
   color: #B3B3B3; /* Light grey on hover */
 }
+
+/* Hamburger Styling */
+.hamburger {
+  display: none; /* Hide the hamburger menu by default */
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+/* Media query for screens with a max width of 1200px */
+@media (max-width: 1200px) {
+  /* Show the hamburger menu */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide the regular navigation links */
+  .nav-links {
+    display: none;
+    flex-direction: column-reverse; /* Stack links vertically */
+    position: absolute;
+    top: 6vh; /* Adjust the position as needed */
+    left: 0;
+    width: 60%; /* Set the width to control the menu size */
+    max-width: 300px; /* Set a maximum width if desired */
+ 
+    z-index: 1;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show the links when active */
+  }
+
+  /* Style the links in the mobile menu */
+  .nav-links li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .nav-links a:hover {
+    background-color: #61dafb; /* Light blue on hover */
+  }
+}
