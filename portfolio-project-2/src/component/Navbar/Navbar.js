@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Navbar.css'; // Import your CSS file
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import GamesIcon from '@mui/icons-material/Games'; // Import GamesIcon
 
 function Navbar() {
   const [isActive, setIsActive] = useState(false);
@@ -32,16 +34,16 @@ function Navbar() {
       {/* Create the navigation links */}
       <ul className={`nav-links ${isActive ? 'active' : ''}`}>
         <li>
-          <Link to="/newgames" onClick={toggleMenu}>New Games</Link>
+          <Link to="/newgames" onClick={toggleMenu}>Games</Link>
         </li>
         <li>
-          <Link to="/addgames" onClick={toggleMenu}>Add Games</Link>
+          <Link to="/aboutcontact" onClick={toggleMenu}>About</Link> {/* Update the link */}
         </li>
         <li>
-          <Link to="/about" onClick={toggleMenu}>About</Link>
-        </li>
-        <li>
-          <Link to="/contact" onClick={toggleMenu}>Contact</Link>
+          {/* Link to the "Add Games" page */}
+          <Link to="/addgames" onClick={toggleMenu}>
+            <ShoppingCartIcon /> {/* Use the ShoppingCartIcon here */}
+          </Link>
         </li>
       </ul>
     </nav>

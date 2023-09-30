@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './AddGames.css'; 
+
 function AddGames() {
   const [gameData, setGameData] = useState({
     name: '',
@@ -10,6 +11,8 @@ function AddGames() {
     exclusive: false, // Use a checkbox for exclusivity
     multiplayer: false, // Use a checkbox for multiplayer
   });
+
+  const [cart, setCart] = useState([]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -22,94 +25,57 @@ function AddGames() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle the form submission, e.g., send the data to an API or update state
-    console.log('Form data:', gameData);
+    // Handle the form submission, e.g., add the game data to the cart
+    setCart([...cart, gameData]);
+    // Clear the form after adding to the cart
+    setGameData({
+      name: '',
+      genre: '',
+      year: '',
+      price: '',
+      rating: '',
+      exclusive: false,
+      multiplayer: false,
+    });
   };
 
   return (
     <div>
-        <h1>This is the Add Games Page</h1>
-      <h2>Add Games Page</h2>
+      <h1>This is the Shopping Cart</h1>
+      <h2>Add Games to Cart</h2>
+      <h2>Add Games to Cart</h2>
+      <h2>Add Games to Cart</h2>
+      <h2>Add Games to Cart</h2>
+      <h2>Add Games to Cart</h2>
+      <h2>Add Games to Cart</h2>
+      <h2>Add Games to Cart</h2>
+      <h2>Add Games to Cart</h2>
+      <h2>Add Games to Cart</h2>
+      <h2>Add Games to Cart</h2>
+      <h2>Add Games to Cart</h2>
+      <h2>Add Games to Cart</h2>
+      <h2>Add Games to Cart</h2>
+      <h2>Add Games to Cart</h2>
+      <h2>Add Games to Cart</h2>
+      <h2>Add Games to Cart</h2>
+      <h2>Add Games to Cart</h2>
+      <h2>Add Games to Cart</h2>
       <form onSubmit={handleSubmit}>
-        <label>
-          Game Name:
-          <input
-            type="text"
-            name="name"
-            value={gameData.name}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-
-        <label>
-          Genre:
-          <input
-            type="text"
-            name="genre"
-            value={gameData.genre}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-
-        <label>
-          Year:
-          <input
-            type="number"
-            name="year"
-            value={gameData.year}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-
-        <label>
-          Price:
-          <input
-            type="number"
-            name="price"
-            value={gameData.price}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-
-        <label>
-          Rating:
-          <input
-            type="number"
-            name="rating"
-            value={gameData.rating}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-
-        <label>
-          Exclusive:
-          <input
-            type="checkbox"
-            name="exclusive"
-            checked={gameData.exclusive}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-
-        <label>
-          Multiplayer:
-          <input
-            type="checkbox"
-            name="multiplayer"
-            checked={gameData.multiplayer}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-
-        <button type="submit">Add Game</button>
+        {/* ... (Input fields for game data) */}
+        <button type="submit">Add Game to Cart</button>
       </form>
+      
+      <h2>Shopping Cart</h2>
+      <ul className="cart-list">
+        {cart.map((game, index) => (
+          <li key={index}>
+            <h3>{game.name}</h3>
+            <p>Genre: {game.genre}</p>
+            <p>Price: ${game.price}</p>
+            {/* Add more game information as needed */}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

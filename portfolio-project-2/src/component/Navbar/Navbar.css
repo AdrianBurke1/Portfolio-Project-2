@@ -1,28 +1,32 @@
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Special+Elite&display=swap');
-
- body{
-  font-family: 'Poppins', sans-serif;
-font-family: 'Special Elite', cursive;
- }
-
-/* Navbar Styling */
 /* Navbar Styling */
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the links horizontally */
   align-items: center;
-  padding: 0.5rem 2rem; /* Reduce top and bottom padding */
-  height: 17vh; /* Set the Navbar height to 17vh */
+  padding: 0 2rem; /* Reduce left and right padding to fit the whole screen */
+  height: 17vh;
+  background-color: black;
+  width: 100%; /* Set the width to 100% for full width */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+  z-index: 2; /* Ensure it appears above other content */
 }
 
 /* Logo Styling */
+
 .logo {
   font-family: Impact, sans-serif;
   font-size: 69px;
-  color: rgb(0, 0, 0); /* Set the default color to black */
+  color: rgb(255, 255, 255); /* Set the default color to white */
   text-transform: uppercase;
   text-decoration: none;
+  z-index: 2;
+  margin-right: auto; /* Push the logo to the left */
 }
+
 
 .red {
   color: red;
@@ -37,27 +41,27 @@ font-family: 'Special Elite', cursive;
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem; /* Add some gap between the links */
-  height: 100%; /* Fill the entire Navbar height */
-  align-items: center; /* Vertically center the links within the Navbar */
+  gap: 2rem;
+  align-items: center;
+  margin-left: auto;
+  padding-right: 5rem; /* Add right padding to create space from the end of the screen */
 }
 
 .nav-links li {
   margin: 0;
   padding: 0;
+  position: relative; /* Add relative positioning to the list items */
 }
 
 .nav-links a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-size: 1.5rem;
   font-weight: bold;
   transition: color 0.3s ease-in-out;
 }
 
-.nav-links a:hover {
-  color: #B3B3B3; /* Light grey on hover */
-}
+
 
 /* Hamburger Styling */
 .hamburger {
@@ -69,50 +73,42 @@ font-family: 'Special Elite', cursive;
   padding: 0;
   margin: 0;
   outline: none;
+  color: white;
 }
 
-/* Media query for screens with a max width of 1200px */
-@media (max-width: 1200px) {
-  /* Show the hamburger menu */
-  .hamburger {
-    display: block;
-  }
-
-  /* Hide the regular navigation links */
-  .nav-links {
-    display: none;
-    flex-direction: column-reverse; /* Stack links vertically */
-    position: absolute;
-    top: 6vh; /* Adjust the position as needed */
-    left: 0;
-    width: 60%; /* Set the width to control the menu size */
-    max-width: 300px; /* Set a maximum width if desired */
- 
-    z-index: 1;
-  }
-
-  .nav-links.active {
-    display: flex; /* Show the links when active */
-  }
-
-  /* Style the links in the mobile menu */
-  .nav-links li {
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-links a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 1rem;
-    text-align: center;
-    width: 100%;
-    transition: background-color 0.3s ease-in-out;
-  }
-
-  .nav-links a:hover {
-    background-color: #61dafb; /* Light blue on hover */
-  }
+/* Dropdown Styling */
+.dropdown {
+  position: absolute;
+  top: 100%; /* Position dropdown below the navbar */
+  left: 0;
+  background-color: black;
+  width: 100%; /* Set the dropdown width to 100% */
+  display: none; /* Hide the dropdown by default */
+  flex-wrap: wrap; /* Allow links to wrap to the next line */
+  z-index: 1; /* Ensure the dropdown appears above other content */
 }
+
+.nav-links.active .dropdown {
+  display: flex; /* Show the dropdown when active */
+  flex-direction: row; /* Display links horizontally */
+  position: relative; /* Reset position to relative */
+  top: 0; /* Reset top position */
+  background-color: transparent; /* Make the background transparent */
+}
+
+/* Style the dropdown links */
+.dropdown a {
+  text-decoration: none;
+  color: white; /* White text color */
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem;
+  text-align: center;
+  flex: 1; /* Equal width for links */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown a:hover {
+  background-color: #61dafb; /* Light blue on hover */
+}
+

@@ -44,6 +44,7 @@ function About() {
             </div>
           </div>
           <div className="text-container2">
+            <h3>
             <p>
               I am actively pursuing a FullStack Development Certification at
               Pursuit, showcasing my openness and readiness for the work field.
@@ -55,6 +56,7 @@ function About() {
               crafting dynamic, responsive, and user-friendly web applications.
               I call it Tech Space unite
             </p>
+            </h3>
           </div>
         </div>
       </div>
@@ -97,6 +99,7 @@ function About() {
             </div>
           </div>
           <div className="text-container2">
+            <h3>
             <p>
               Hi, I am a Pursuit fellow with experience in software development
               specifically in full-stake web development. My journey into
@@ -108,6 +111,7 @@ function About() {
               and I haven’t looked back since. I’m a self-learner, proficient in
               problem-solving and debugging, and passionate about technology.
             </p>
+            </h3>
           </div>
         </div>
       </div>
